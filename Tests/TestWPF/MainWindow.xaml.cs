@@ -27,7 +27,7 @@ namespace TestWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //asdsd
+            var a = 1;
         }
     }
 }
