@@ -38,32 +38,36 @@ namespace TestWPF
             string to = WpfTestMailSender.to;
 
             try
-            {
-                using (var message = new MailMessage(from, to))
-                {
-                    message.Subject = message_subject;
-                    message.Body = message_body;
+            {            
 
 
-                    string server_address = WpfTestMailSender.server_address;
-                    int server_port = WpfTestMailSender.server_port;
+                EmailSendServiceClass mail = new EmailSendServiceClass(UserNameEdit.Text, PasswordEdit.SecurePassword);
+                mail.MsgSend(UserNameEdit.Text, PasswordEdit.SecurePassword);
+                MessageBox.Show("Почта отправлена!", "Ура!!!",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+                //using (var message = new MailMessage(from, to))
+                //{
+                //    message.Subject = message_subject;
+                //    message.Body = message_body;
 
-                    using (var client = new SmtpClient(server_address, server_port))
-                    {
-                        client.EnableSsl = true;
 
-                        var user_name = UserNameEdit.Text;
-                        //var user_password = PasswordEdit.Password;
-                        SecureString user_password = PasswordEdit.SecurePassword;  //using System.Security;!!!!!!!
+                //    string server_address = WpfTestMailSender.server_address;
+                //    int server_port = WpfTestMailSender.server_port;
 
-                        client.Credentials = new NetworkCredential(user_name, user_password);
+                //    using var client = new SmtpClient(server_address, server_port);
+                //    client.EnableSsl = true;
 
-                        client.Send(message);
+                //    var user_name = UserNameEdit.Text;
+                //    //var user_password = PasswordEdit.Password;
+                //    SecureString user_password = PasswordEdit.SecurePassword;  //using System.Security;!!!!!!!
 
-                        MessageBox.Show("Почта отправлена!", "Ура!!!",
-                        MessageBoxButton.OK, MessageBoxImage.Information);
-                    }
-                }
+                //    client.Credentials = new NetworkCredential(user_name, user_password);
+
+                //    client.Send(message);
+
+                //    MessageBox.Show("Почта отправлена!", "Ура!!!",
+                //    MessageBoxButton.OK, MessageBoxImage.Information);
+                //}
             }
             catch (Exception error)
             {

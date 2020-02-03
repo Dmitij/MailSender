@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button Content="Button" HorizontalAlignment="Left" Margin="219,244,0,0" VerticalAlignment="Top" Height="69" Width="116" Click="OnSendButtonClick"/>
-        <TextBox x:Name="UserNameEdit" HorizontalAlignment="Left" Margin="144,167,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="UserNameEdit" HorizontalAlignment="Left" Margin="144,167,0,0" Text="gorbunokya" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <PasswordBox x:Name="PasswordEdit" HorizontalAlignment="Left" Margin="358,167,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBlock Margin="170,132,0,0" Text="Имя пользователя" TextWrapping="Wrap"
                    HorizontalAlignment="Left" VerticalAlignment="Top"/>
