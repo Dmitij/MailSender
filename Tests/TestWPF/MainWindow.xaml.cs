@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
+using System.Net.Mail;
+using System.Security;
+
 
 namespace TestWPF
 {
@@ -25,9 +29,46 @@ namespace TestWPF
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void OnSendButtonClick(object sender, RoutedEventArgs e)
         {
-            var a = 1;
+            string message_subject = WpfTestMailSender.message_subject;
+            string message_body = WpfTestMailSender.message_body;
+
+            string from = WpfTestMailSender.from;
+            string to = WpfTestMailSender.to;
+
+            try
+            {
+                using (var message = new MailMessage(from, to))
+                {
+                    message.Subject = message_subject;
+                    message.Body = message_body;
+
+
+                    string server_address = WpfTestMailSender.server_address;
+                    int server_port = WpfTestMailSender.server_port;
+
+                    using (var client = new SmtpClient(server_address, server_port))
+                    {
+                        client.EnableSsl = true;
+
+                        var user_name = UserNameEdit.Text;
+                        //var user_password = PasswordEdit.Password;
+                        SecureString user_password = PasswordEdit.SecurePassword;  //using System.Security;!!!!!!!
+
+                        client.Credentials = new NetworkCredential(user_name, user_password);
+
+                        client.Send(message);
+
+                        MessageBox.Show("Почта отправлена!", "Ура!!!",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
