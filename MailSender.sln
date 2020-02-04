@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender", "MailSender\MailSender.csproj", "{13E33A40-DED9-437E-9192-77030B23E378}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailSender", "MailSender\MailSender.csproj", "{13E33A40-DED9-437E-9192-77030B23E378}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C9FA8E24-4528-4E2E-9267-8C1FB69929C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWPF", "Tests\TestWPF\TestWPF.csproj", "{05CFB742-5E6A-46B9-88D6-DBEF697878C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWPF", "Tests\TestWPF\TestWPF.csproj", "{05CFB742-5E6A-46B9-88D6-DBEF697878C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "Tests\TestConsole\TestConsole.csproj", "{430090D4-6ADE-4E6C-85A1-3CD2905C6C15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsole", "Tests\TestConsole\TestConsole.csproj", "{430090D4-6ADE-4E6C-85A1-3CD2905C6C15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

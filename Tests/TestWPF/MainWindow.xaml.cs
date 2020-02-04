@@ -29,6 +29,7 @@ namespace TestWPF
             InitializeComponent();
         }
 
+
         private void OnSendButtonClick(object sender, RoutedEventArgs e)
         {
             string message_subject = WpfTestMailSender.message_subject;
@@ -36,43 +37,32 @@ namespace TestWPF
 
             string from = WpfTestMailSender.from;
             string to = WpfTestMailSender.to;
-
+            
             try
-            {            
-
-
+            {   
                 EmailSendServiceClass mail = new EmailSendServiceClass(UserNameEdit.Text, PasswordEdit.SecurePassword);
                 mail.MsgSend(UserNameEdit.Text, PasswordEdit.SecurePassword);
-                MessageBox.Show("Почта отправлена!", "Ура!!!",
-                MessageBoxButton.OK, MessageBoxImage.Information);
-                //using (var message = new MailMessage(from, to))
-                //{
-                //    message.Subject = message_subject;
-                //    message.Body = message_body;
+                //MessageBox.Show("Почта отправлена!", "Ура!!!", MessageBoxButton.OK, MessageBoxImage.Information);
+                MsgShow("Почта отправлена! Ура!!!", Brushes.Green);
+                
 
-
-                //    string server_address = WpfTestMailSender.server_address;
-                //    int server_port = WpfTestMailSender.server_port;
-
-                //    using var client = new SmtpClient(server_address, server_port);
-                //    client.EnableSsl = true;
-
-                //    var user_name = UserNameEdit.Text;
-                //    //var user_password = PasswordEdit.Password;
-                //    SecureString user_password = PasswordEdit.SecurePassword;  //using System.Security;!!!!!!!
-
-                //    client.Credentials = new NetworkCredential(user_name, user_password);
-
-                //    client.Send(message);
-
-                //    MessageBox.Show("Почта отправлена!", "Ура!!!",
-                //    MessageBoxButton.OK, MessageBoxImage.Information);
-                //}
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.Message, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                //MessageBox.Show(error.Message, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MsgShow(error.Message, Brushes.Red);
             }
         }
+
+        private void MsgShow(string msg, Brush msgcolor)
+        {
+            MsgWindow MsgWindow = new MsgWindow();
+            //Теперь MainWindow главное окно для taskWindow
+            MsgWindow.Owner = this;
+            MsgWindow.tbMsg.Text = msg;
+            MsgWindow.tbMsg.Foreground = msgcolor; 
+            MsgWindow.Show();
+        }
+       
     }
 }
