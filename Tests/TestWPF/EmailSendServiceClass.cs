@@ -10,22 +10,22 @@ namespace TestWPF
     class EmailSendServiceClass
     {
 
-        public string message_Subject;
-        public string message_Body;
+        //public string message_Subject;
+        //public string message_Body;
         public string from;
         public string to;
         public string server_address;
         public int server_port;
-        public EmailSendServiceClass(string user_name, SecureString user_password)
+        public EmailSendServiceClass()
         {
-            message_Subject = WpfTestMailSender.message_subject;
-            message_Body = WpfTestMailSender.message_body;
+            //message_Subject = WpfTestMailSender.message_subject;
+            //message_Body = WpfTestMailSender.message_body;
             from = WpfTestMailSender.from;
             to = WpfTestMailSender.to;
             server_address = WpfTestMailSender.server_address;
             server_port = WpfTestMailSender.server_port;
         }
-        public void MsgSend(string user_name, SecureString user_password)
+        public void MsgSend(string user_name, SecureString user_password, string message_Subject, string message_Body)
         {
             using (var message = new MailMessage(from, to))
             {

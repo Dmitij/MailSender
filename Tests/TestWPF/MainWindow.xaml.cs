@@ -31,17 +31,12 @@ namespace TestWPF
 
 
         private void OnSendButtonClick(object sender, RoutedEventArgs e)
-        {
-            string message_subject = WpfTestMailSender.message_subject;
-            string message_body = WpfTestMailSender.message_body;
-
-            string from = WpfTestMailSender.from;
-            string to = WpfTestMailSender.to;
+        {           
             
             try
             {   
-                EmailSendServiceClass mail = new EmailSendServiceClass(UserNameEdit.Text, PasswordEdit.SecurePassword);
-                mail.MsgSend(UserNameEdit.Text, PasswordEdit.SecurePassword);
+                EmailSendServiceClass mail = new EmailSendServiceClass();
+                mail.MsgSend(UserNameEdit.Text, PasswordEdit.SecurePassword, tbSubject.Text, tbBody.Text);
                 //MessageBox.Show("Почта отправлена!", "Ура!!!", MessageBoxButton.OK, MessageBoxImage.Information);
                 MsgShow("Почта отправлена! Ура!!!", Brushes.Green);
                 
