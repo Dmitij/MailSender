@@ -26,7 +26,7 @@
         <StatusBar DockPanel.Dock="Bottom">
             <TextBlock Text="Готов к труду и обороне!"/>
         </StatusBar>
-        <TabControl>
+        <TabControl x:Name="TabControl">
             <TabItem Header="Рассылка" ToolTip="Управление рассылкой">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -35,7 +35,7 @@
                     </Grid.RowDefinitions>
                     <ToolBarTray>
                         <ToolBar Header="Отправители">
-                            <ComboBox Width="150" Name="SendersList"
+                            <ComboBox Width="185" Name="SendersList"
                                       ItemsSource="{x:Static data:TestData.Senders}"
                                       DisplayMemberPath="Name"
                                       SelectedIndex="0" IsEditable="True"/>
@@ -49,7 +49,7 @@
                                 <Image Height="16" Source="Media\remove.png"/>
                             </Button>
                         </ToolBar>
-                        <ToolBar Header="Сервера" Band="1" BandIndex="0">
+                        <ToolBar Header="Выбрать smtp-server" Band="1" BandIndex="0">
                             <ComboBox Width="150" Name="ServersList"
                                       ItemsSource="{x:Static data:TestData.Servers}" 
                                       SelectedIndex="0">
@@ -76,7 +76,7 @@
                                 <fa:ImageAwesome Height="12" Icon="Solid_Trash" Foreground="Red"/>
                             </Button>
                         </ToolBar>
-                        <ToolBar Header="Получатели" Band="1">
+                        <ToolBar Header="Список адресатов" Band="1">
                             <Button ToolTip="Добавить">
                                 <fa:ImageAwesome Height="12" Icon="Solid_Plus" Foreground="DarkBlue"/>
                             </Button>
@@ -91,7 +91,7 @@
                             <!--<ToolBar.Resources>
                                 <entities:Sender x:Key="Test" Name="QWE" Address="ASD"/>
                             </ToolBar.Resources>-->
-                            <Button>
+                            <Button x:Name="btnPlan" Click="btnPlan_Click" >
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="Перейти в планировщик"/>
                                     <fa:ImageAwesome Height="12" Icon="Solid_Clock" Margin="3,0,0,0"

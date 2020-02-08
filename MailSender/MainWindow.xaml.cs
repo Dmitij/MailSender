@@ -32,12 +32,17 @@ namespace MailSender
             var sender = SendersList.SelectedItem as Sender;
             if (sender is null) return;
 
-            //var dialog = new SenderEditor(sender, this);
+            var dialog = new SenderEditor(sender, this);
 
-            //if (dialog.ShowDialog() != true) return;
+            if (dialog.ShowDialog() != true) return;
 
-            //sender.Name = dialog.NameValue;
-            //sender.Address = dialog.AddressValue;
+            sender.Name = dialog.NameValue;
+            sender.Address = dialog.AddressValue;
+        }
+
+        private void btnPlan_Click(object sender, RoutedEventArgs e)
+        {           
+            TabControl.SelectedItem = TabControl.Items[2];
         }
     }
 }
