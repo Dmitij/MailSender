@@ -7,7 +7,7 @@
         xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Спамер v.01" Height="450" Width="800">
-    <Grid>
+    <Grid Height="358" Margin="0,0,28,0">
         <Button Content="Отправить" HorizontalAlignment="Left" Margin="178,307,0,0" VerticalAlignment="Top" Height="69" Width="116" Click="OnSendButtonClick"/>
         <TextBox x:Name="UserNameEdit" HorizontalAlignment="Left" Margin="167,54,0,0" Text="gorbunokya" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <PasswordBox x:Name="PasswordEdit" HorizontalAlignment="Left" Margin="381,54,0,0" VerticalAlignment="Top" Width="120"/>
@@ -17,8 +17,8 @@
                    HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBox x:Name="tbSubject" HorizontalAlignment="Left" Margin="21,114,0,0" Text="test" TextWrapping="Wrap" VerticalAlignment="Top" Width="749" Height="24"/>
         <TextBox x:Name="tbBody" HorizontalAlignment="Left" Margin="21,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="749" Height="117"/>
-        <xctk:ColorPicker VerticalAlignment="Top" ></xctk:ColorPicker>
-    
+        <xctk:TimelinePanel VerticalAlignment="Top" HorizontalAlignment="Center" ></xctk:TimelinePanel>
+
     </Grid>
 
 </Window>
