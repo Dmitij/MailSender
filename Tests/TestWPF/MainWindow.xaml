@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWPF"
+        xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Спамер v.01" Height="450" Width="800">
     <Grid>
@@ -16,6 +17,8 @@
                    HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBox x:Name="tbSubject" HorizontalAlignment="Left" Margin="21,114,0,0" Text="test" TextWrapping="Wrap" VerticalAlignment="Top" Width="749" Height="24"/>
         <TextBox x:Name="tbBody" HorizontalAlignment="Left" Margin="21,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="749" Height="117"/>
+        <xctk:ColorPicker VerticalAlignment="Top" ></xctk:ColorPicker>
+    
     </Grid>
 
 </Window>
