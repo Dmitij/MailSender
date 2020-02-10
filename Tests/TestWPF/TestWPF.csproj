@@ -10,4 +10,10 @@
     <PackageReference Include="Extended.Wpf.Toolkit" Version="3.8.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CodePasswordDLL">
+      <HintPath>..\..\CodePasswordDLL\bin\Release\netstandard2.0\CodePasswordDLL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
