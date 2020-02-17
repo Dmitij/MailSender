@@ -10,4 +10,8 @@
     <PackageReference Include="Extended.Wpf.Toolkit" Version="3.8.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\CodePasswordDLL\CodePasswordDLL.csproj" />
+  </ItemGroup>
+
 </Project>
