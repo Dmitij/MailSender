@@ -44,6 +44,9 @@ namespace MultiThread
             Thread myThread2 = new Thread(new ParameterizedThreadStart(Sum));
             myThread2.Start(n);   
             Console.ReadLine();
+
+
+
         }
 
        
