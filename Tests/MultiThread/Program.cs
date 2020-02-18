@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -70,20 +71,93 @@ namespace MultiThread
             Thread myThread2 = new Thread(new ParameterizedThreadStart(Sum));
             myThread2.Start(n);
             Console.ReadLine();
+            Menu();
         }
         static void Task6()
         {
             Console.Clear();
 
 
-            int N = 100; // размерность массива
-            int[,] arr1 = new int[N, N];
-            int[,] arr2 = new int[N, N];
+            int N = 10; // размерность массива
+            int[,] A = new int[N, N];
+            int[,] B = new int[N, N];
+            int[,] C = new int[N, N];
 
+            Random rnd1 = new Random();
+            Random rnd2 = new Random();
+            Stopwatch stopwatch1 = new Stopwatch();
+            Stopwatch stopwatch2 = new Stopwatch();
+
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    A[i, j] = rnd1.Next(0, 10);
+                    B[i, j] = rnd2.Next(0, 10);
+                }
+            }
+
+            MatrixPrint(A, N);
+            Console.Write("{0,28:0}", "x\n");
+            MatrixPrint(B, N);
+
+            // Запускаем внутренний таймер объекта Stopwatch
+            stopwatch1.Start();
+
+            for (int i = 0; i < N; ++i)
+                for (int j = 0; j < N; ++j)
+                    for (int k = 0; k < N; ++k)
+                        C[i, j] += A[i, k] * B[k, j]; //Собираем сумму произведений
+                       
+            
+            Console.Write("{0,28:0}", "=\n");
+            MatrixPrint(C, N);
+
+            
+            stopwatch1.Stop();
+            Console.WriteLine("Потрачено тактов на выполнение: " + stopwatch1.ElapsedTicks);
+
+
+            stopwatch2.Start();
+
+            for (int i = 0; i < N; ++i)
+                for (int j = 0; j < N; ++j)
+                {
+                    //var tskSum = Task.Factory.StartNew(() => Sum(A, B, C, i, j, N));
+                    //Task.WaitAll(tskSum);
+                    Parallel.Invoke(() => Sum(A, B, C, i, j, N));
+                }
+            
+            Console.Write("{0,28:0}", "=\n");
+            MatrixPrint(C, N);
+            
+            stopwatch2.Stop();
+            Console.WriteLine("Потрачено тактов на выполнение: " + stopwatch2.ElapsedTicks);
 
             Console.ReadLine();
-
+            Menu();
         }
+        static void Sum(int[,] A, int[,] B, int[,] C, int i, int j, int N)
+        {            
+            int sum = 0;
+            for (int k = 0; k < N; ++k)
+                sum += A[i, k] * B[k, j];
+            C[i, j] = sum;            
+        }
+        static void MatrixPrint(int[,] arr, int N)
+        {      
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write("|");
+                for (int j = 0; j < N; j++)                                    
+                    Console.Write("{0,4:0} ", arr[i, j]);
+                
+                Console.Write("|" );
+                Console.WriteLine();                
+            }
+            
+        }
+        
         static void Main(string[] args)
         {
             Menu();   
