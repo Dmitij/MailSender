@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodePasswordDLL", "CodePass
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender.libTest", "Tests\MailSender.libTest\MailSender.libTest.csproj", "{CE58F788-CD68-4D10-B284-5E914BB574CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePasswordDLLTest", "Tests\CodePasswordDLLTest\CodePasswordDLLTest.csproj", "{892EA16D-0DF1-4491-8873-622C18048F90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{CE58F788-CD68-4D10-B284-5E914BB574CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE58F788-CD68-4D10-B284-5E914BB574CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE58F788-CD68-4D10-B284-5E914BB574CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{892EA16D-0DF1-4491-8873-622C18048F90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{892EA16D-0DF1-4491-8873-622C18048F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{892EA16D-0DF1-4491-8873-622C18048F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{892EA16D-0DF1-4491-8873-622C18048F90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{05CFB742-5E6A-46B9-88D6-DBEF697878C0} = {C9FA8E24-4528-4E2E-9267-8C1FB69929C6}
 		{430090D4-6ADE-4E6C-85A1-3CD2905C6C15} = {C9FA8E24-4528-4E2E-9267-8C1FB69929C6}
 		{CE58F788-CD68-4D10-B284-5E914BB574CB} = {C9FA8E24-4528-4E2E-9267-8C1FB69929C6}
+		{892EA16D-0DF1-4491-8873-622C18048F90} = {C9FA8E24-4528-4E2E-9267-8C1FB69929C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FE8D5108-6261-4CDD-8571-13A3A3214103}
