@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
+using System.Net.Mail;
+using System.Security;
+
 
 namespace TestWPF
 {
@@ -25,9 +29,35 @@ namespace TestWPF
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void OnSendButtonClick(object sender, RoutedEventArgs e)
+        {           
+            
+            try
+            {   
+                EmailSendServiceClass mail = new EmailSendServiceClass();
+                mail.MsgSend(UserNameEdit.Text, PasswordEdit.SecurePassword, tbSubject.Text, tbBody.Text);
+                //MessageBox.Show("Почта отправлена!", "Ура!!!", MessageBoxButton.OK, MessageBoxImage.Information);
+                MsgShow("Почта отправлена! Ура!!!", Brushes.Green);
+                
+
+            }
+            catch (Exception error)
+            {
+                //MessageBox.Show(error.Message, "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MsgShow(error.Message, Brushes.Red);
+            }
         }
+
+        private void MsgShow(string msg, Brush msgcolor)
+        {
+            MsgWindow MsgWindow = new MsgWindow();
+            //Теперь MainWindow главное окно для taskWindow
+            MsgWindow.Owner = this;
+            MsgWindow.tbMsg.Text = msg;
+            MsgWindow.tbMsg.Foreground = msgcolor; 
+            MsgWindow.Show();
+        }
+       
     }
 }

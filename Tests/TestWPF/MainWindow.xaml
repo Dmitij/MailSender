@@ -5,11 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Спамер v.01" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="219,244,0,0" VerticalAlignment="Top" Height="69" Width="116" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" Margin="119,158,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="358,167,0,0" VerticalAlignment="Top" Width="120"/>
-
+        <Button Content="Отправить" HorizontalAlignment="Left" Margin="178,307,0,0" VerticalAlignment="Top" Height="69" Width="116" Click="OnSendButtonClick"/>
+        <TextBox x:Name="UserNameEdit" HorizontalAlignment="Left" Margin="167,54,0,0" Text="gorbunokya" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="PasswordEdit" HorizontalAlignment="Left" Margin="381,54,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock Margin="193,19,0,0" Text="Имя пользователя" TextWrapping="Wrap"
+                   HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Margin="455,19,0,0" Text="Пароль" TextWrapping="Wrap" Width="120"
+                   HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbSubject" HorizontalAlignment="Left" Margin="21,114,0,0" Text="test" TextWrapping="Wrap" VerticalAlignment="Top" Width="749" Height="24"/>
+        <TextBox x:Name="tbBody" HorizontalAlignment="Left" Margin="21,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="749" Height="117"/>
     </Grid>
+
 </Window>
