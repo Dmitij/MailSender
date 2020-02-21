@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Net;
 using System.Net.Mail;
 using System.Security;
+using CodePasswordDLL;
 
 
 namespace TestWPF
@@ -37,6 +38,7 @@ namespace TestWPF
             {   
                 EmailSendServiceClass mail = new EmailSendServiceClass();
                 mail.MsgSend(UserNameEdit.Text, PasswordEdit.SecurePassword, tbSubject.Text, tbBody.Text);
+                //mail.MsgSend(UserNameEdit.Text, CodePassword.getPassword("{3t1l2m6"), tbBody.Text);
                 //MessageBox.Show("Почта отправлена!", "Ура!!!", MessageBoxButton.OK, MessageBoxImage.Information);
                 MsgShow("Почта отправлена! Ура!!!", Brushes.Green);
                 
