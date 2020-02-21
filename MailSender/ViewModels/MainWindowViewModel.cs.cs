@@ -11,19 +11,19 @@ using MailSender.lib.Services.Interfaces;
 
 namespace MailSender.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    public class MainWindowViewModel : ViewModelBase  //
     {
         private readonly IRecipientsManager _RecipientsManager;
 
         private string _Title = "Рассыльщик почты";
 
-        public string Title
+        public string Title  //свойства
         {
             get => _Title;
             set => Set(ref _Title, value);
         }
 
-        private ObservableCollection<Recipient> _Recipients;
+        private ObservableCollection<Recipient> _Recipients;   //колекции
 
         public ObservableCollection<Recipient> Recipients
         {
@@ -39,7 +39,7 @@ namespace MailSender.ViewModels
             set => Set(ref _SelectedRecipient, value);
         }
 
-        #region Команды
+        #region Команды   
 
         public ICommand LoadRecipientsDataCommand { get; }
 
@@ -47,6 +47,10 @@ namespace MailSender.ViewModels
 
         #endregion
 
+
+        //создаем команды кторые будем использовать для кнопок 
+        //(команды способны регулировать активность элементов управления к которым они привязаны
+        //если команда вернет False на CanExecute то элемен = Disabled)
         public MainWindowViewModel(IRecipientsManager RecipientsManager)
         {
             LoadRecipientsDataCommand = new RelayCommand(OnLoadRecipientsDataCommandExecuted, CanLoadRecipientsDataCommandExecute);
@@ -55,6 +59,8 @@ namespace MailSender.ViewModels
             _RecipientsManager = RecipientsManager;
         }
 
+
+        //создаем методы для этих команд
         private bool CanLoadRecipientsDataCommandExecute() => true;
 
         private void OnLoadRecipientsDataCommandExecuted()

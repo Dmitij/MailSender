@@ -2,6 +2,7 @@
 using MailSender.lib.Data;
 using MailSender.lib.Entities;
 using MailSender.lib.Service;
+using CodePasswordDLL;
 
 namespace MailSender
 {
@@ -10,8 +11,7 @@ namespace MailSender
         public MainWindow()
         {
             InitializeComponent();
-            //System.Windows.Input.CommandManager
-
+            //System.Windows.Input.CommandManager            
             //SendersList.ItemsSource = TestData.Senders;
         }
 

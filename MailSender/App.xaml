@@ -7,7 +7,9 @@
              xmlns:vm="clr-namespace:MailSender.ViewModels"
              xmlns:local="clr-namespace:MailSender"
              StartupUri="MainWindow.xaml">
+    <!--основное запускаемое окно -->
     <Application.Resources>
         <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True"/>
+        <!--ViewModelLocator из MvvmLight для извлечения view model -->
     </Application.Resources>
 </Application>

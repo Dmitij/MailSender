@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
+  
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -22,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CodePasswordDLL\CodePasswordDLL.csproj" />
     <ProjectReference Include="..\MailSender.lib\MailSender.lib.csproj" />
   </ItemGroup>
 
